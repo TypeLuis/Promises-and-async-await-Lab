@@ -25,17 +25,17 @@ async function getUserData(id) {
         const basic = results[0];
         const personal = results[1];
     */
-    const [basic, personal] = await Promise.all([
+    const [user, personal] = await Promise.all([
     dbs[dbName](id), // username, website, company
     vault(id)        // name, email, address, phone
     ])
 
-    //  console.log(basic, personal)
+    //  console.log(user, personal)
 
     return {
         id,
         ...personal,
-        ...basic
+        ...user
     }
   } catch (error) {
         return Promise.reject(error)
