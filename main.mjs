@@ -22,7 +22,7 @@ async function getUserData(id) {
     //  we're destructuring them to independent variables
     /*
         Same as this if we used results = etc..
-        const basic = results[0];
+        const user = results[0];
         const personal = results[1];
     */
     const [user, personal] = await Promise.all([
